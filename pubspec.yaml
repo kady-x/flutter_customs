@@ -1,7 +1,7 @@
 name: flutter_customs
 description: new package project that create customs to make it easier for developer.
-version: 0.0.18
-homepage: https://github.com/Alrehila/flutter_customs
+version: 0.0.19
+homepage: https://github.com/Kadiex/flutter_customs
 
 topics:
   - dart
