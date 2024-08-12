@@ -1,9 +1,9 @@
 //  CUSTOMPHONE  //
-// ignore_for_file: file_names
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../customBottomSheet.dart';
+import '../custom_bottom_sheet.dart';
+import '../customSVG/custom_svg.dart';
 import 'country_list.dart';
 import 'model.dart';
 
@@ -73,7 +73,6 @@ class _CustomPhoneFormState extends State<CustomPhoneForm> {
         bottom: 20,
       ),
       child: TextFormField(
-        
         keyboardType: const TextInputType.numberWithOptions(
           decimal: true,
         ),
@@ -98,9 +97,12 @@ class _CustomPhoneFormState extends State<CustomPhoneForm> {
                           setState(
                             () {
                               filteredList = countryListController.countries
-                                  .where((country) => country.name
-                                      .toLowerCase()
-                                      .contains(value.toLowerCase()))
+                                  .where(
+                                    (country) =>
+                                        country.name.toLowerCase().contains(
+                                              value.toLowerCase(),
+                                            ),
+                                  )
                                   .toList();
                             },
                           );
@@ -128,9 +130,10 @@ class _CustomPhoneFormState extends State<CustomPhoneForm> {
                                     setState(
                                       () {
                                         prefs.setString(
-                                            "CountryCode",
-                                            countryListController
-                                                .selectedCountryCode);
+                                          "CountryCode",
+                                          countryListController
+                                              .selectedCountryCode,
+                                        );
                                         final codeIc =
                                             prefs.getString("CountryCode") ??
                                                 '';
@@ -141,12 +144,16 @@ class _CustomPhoneFormState extends State<CustomPhoneForm> {
                                       },
                                     );
                                   },
-                                  leading: Image.asset(
-                                    country.flagImagePath,
-                                    width: 24,
-                                    height: 16,
+                                  leading: SizedBox(
+                                    height: 40,
+                                    width: 40,
+                                    child: CustomSvg.asset(
+                                      country.flagImagePath,
+                                    ),
                                   ),
-                                  title: Text(country.name),
+                                  title: Text(
+                                    country.name,
+                                  ),
                                 );
                               },
                             );
@@ -158,7 +165,7 @@ class _CustomPhoneFormState extends State<CustomPhoneForm> {
                 },
                 child: Row(
                   children: <Widget>[
-                    Image.asset(
+                    CustomSvg.asset(
                       countryListController.countries
                           .firstWhere(
                             (country) =>

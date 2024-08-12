@@ -1,9 +1,21 @@
-// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
-class CustomTextForm extends StatelessWidget {
-  final String labeltext;
+class CustomPasswordForm extends StatefulWidget {
+  const CustomPasswordForm({
+    super.key,
+    required this.hinttext,
+    required this.labeltext,
+    required this.iconData,
+    this.mycontroller,
+    required this.valid,
+    required this.isNumber,
+    required this.obscureText,
+    this.onTapIcon,
+    required Null Function(dynamic value) onSaved,
+  });
+
   final String hinttext;
+  final String labeltext;
   final IconData iconData;
   final TextEditingController? mycontroller;
   final String? Function(String?) valid;
@@ -11,21 +23,9 @@ class CustomTextForm extends StatelessWidget {
   final bool obscureText;
   final void Function()? onTapIcon;
 
-  const CustomTextForm({
-    Key? key,
-    this.onTapIcon,
-    required this.hinttext,
-    required this.labeltext,
-    required this.iconData,
-    required this.valid,
-    required this.mycontroller,
-    required this.isNumber,
-    required this.obscureText,
-  }) : super(
-          key: key,
-        );
-
   @override
+  State<CustomPasswordForm> createState() => _CustomPasswordForm();
+
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(
@@ -33,18 +33,16 @@ class CustomTextForm extends StatelessWidget {
       ),
       child: TextFormField(
         keyboardType: isNumber
-            ? const TextInputType.numberWithOptions(
-                decimal: true,
-              )
+            ? const TextInputType.numberWithOptions(decimal: true)
             : TextInputType.text,
         obscureText: obscureText == false ? false : true,
         validator: valid,
         controller: mycontroller,
         decoration: InputDecoration(
+          hintText: hinttext,
           hintStyle: const TextStyle(
             fontSize: 14,
           ),
-          hintText: hinttext,
           contentPadding: const EdgeInsets.symmetric(
             vertical: 5,
             horizontal: 30,
@@ -70,6 +68,23 @@ class CustomTextForm extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _CustomPasswordForm extends State<CustomPasswordForm> {
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: passwordController,
     );
   }
 }

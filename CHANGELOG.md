@@ -1,39 +1,41 @@
 # [CHANGE LOG]
 
+## [0.0.28]
+
+- fix phone codes and flags errors.
+- updating the package dependencies.
+
+## [0.0.22]
+
+- fix some errors.
+- added customSVG for svg assets.
+
+## [0.0.20]
+
+- The package has been improved, its size has been reduced, and the countries have been improved.
+
+## [0.0.19]
+
+- Improving the package.
+
 ## [0.0.18]
 
-- Fix assets bug
+- Fix assets bug.
 
 ## [0.0.17]
 
-- Fix bugs
-- Added phone example
+- Fix bugs.
+- Added phone example.
 
 ## [0.0.16]
 
-- Fix bugs
-- add all countries in phone list
-- optimized phone list
+- Fix bugs.
+- add all countries in phone list.
+- optimized phone list.
 
 ## [0.0.16-Beta1]
 
-- Fix bugs
-
-## [0.0.15]
-
-- Fix bugs
-
-## [0.0.15-Beta.3]
-
-- Fix bugs
-
-## [0.0.15-Beta.2]
-
-- Fix bugs
-
-## [0.0.15-Beta.1]
-
-- Fix bugs
+- Fix bugs.
 
 ## [0.0.14]
 
@@ -58,16 +60,6 @@
 ## [0.0.13]
 
 - Bug Fixes
-
-## [0.0.12]
-
-- Bug Fixes
-
-## [0.0.11]
-
-- Bug Fixes
-
-## [0.0.10]
 
 ## [0.0.9]
 

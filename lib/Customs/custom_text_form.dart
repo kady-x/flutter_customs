@@ -1,22 +1,8 @@
-// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
-class CustomPasswordForm extends StatefulWidget {
-  const CustomPasswordForm({
-    super.key,
-    required this.hinttext,
-    required this.labeltext,
-    required this.iconData,
-    this.mycontroller,
-    required this.valid,
-    required this.isNumber,
-    required this.obscureText,
-    this.onTapIcon,
-    required Null Function(dynamic value) onSaved,
-  });
-
-  final String hinttext;
+class CustomTextForm extends StatelessWidget {
   final String labeltext;
+  final String hinttext;
   final IconData iconData;
   final TextEditingController? mycontroller;
   final String? Function(String?) valid;
@@ -24,9 +10,21 @@ class CustomPasswordForm extends StatefulWidget {
   final bool obscureText;
   final void Function()? onTapIcon;
 
-  @override
-  State<CustomPasswordForm> createState() => _CustomPasswordForm();
+  const CustomTextForm({
+    Key? key,
+    this.onTapIcon,
+    required this.hinttext,
+    required this.labeltext,
+    required this.iconData,
+    required this.valid,
+    required this.mycontroller,
+    required this.isNumber,
+    required this.obscureText,
+  }) : super(
+          key: key,
+        );
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(
@@ -34,16 +32,18 @@ class CustomPasswordForm extends StatefulWidget {
       ),
       child: TextFormField(
         keyboardType: isNumber
-            ? const TextInputType.numberWithOptions(decimal: true)
+            ? const TextInputType.numberWithOptions(
+                decimal: true,
+              )
             : TextInputType.text,
         obscureText: obscureText == false ? false : true,
         validator: valid,
         controller: mycontroller,
         decoration: InputDecoration(
-          hintText: hinttext,
           hintStyle: const TextStyle(
             fontSize: 14,
           ),
+          hintText: hinttext,
           contentPadding: const EdgeInsets.symmetric(
             vertical: 5,
             horizontal: 30,
@@ -69,23 +69,6 @@ class CustomPasswordForm extends StatefulWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class _CustomPasswordForm extends State<CustomPasswordForm> {
-  final passwordController = TextEditingController();
-
-  @override
-  void dispose() {
-    passwordController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      controller: passwordController,
     );
   }
 }

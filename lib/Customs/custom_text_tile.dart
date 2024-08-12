@@ -1,14 +1,11 @@
-// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
-class CustomTextBody extends StatelessWidget {
+class CustomTextTitle extends StatelessWidget {
   final String text;
-  const CustomTextBody({
+  const CustomTextTitle({
     Key? key,
     required this.text,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +16,10 @@ class CustomTextBody extends StatelessWidget {
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.bodyLarge,
+        style: const TextStyle(
+          fontSize: 35,
+          fontFamily: "Nunito",
+        ),
       ),
     );
   }

@@ -1,4 +1,3 @@
-// ignore_for_file: file_names, library_private_types_in_public_api
 import 'package:flutter/material.dart';
 
 class CustomCheckbox extends StatefulWidget {
@@ -6,8 +5,8 @@ class CustomCheckbox extends StatefulWidget {
   final String linktext;
   final bool initialValue;
   final bool value;
-  final void Function(bool?)? onChanged;
   final String? Function(bool?)? valid;
+  final void Function(bool?)? onChanged;
   final void Function()? onTap;
 
   const CustomCheckbox({
@@ -19,15 +18,13 @@ class CustomCheckbox extends StatefulWidget {
     required this.onChanged,
     required this.valid,
     this.onTap,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   @override
-  _CustomCheckboxState createState() => _CustomCheckboxState();
+  CustomCheckboxState createState() => CustomCheckboxState();
 }
 
-class _CustomCheckboxState extends State<CustomCheckbox> {
+class CustomCheckboxState extends State<CustomCheckbox> {
   @override
   Widget build(BuildContext context) {
     return Row(

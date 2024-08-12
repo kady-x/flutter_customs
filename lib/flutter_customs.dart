@@ -6,14 +6,14 @@
 
 library alrehila_customs;
 
-export 'Customs/customButton.dart';
-export 'Customs/customCheckbox.dart';
-export 'Customs/customEmailForm.dart';
-export 'Customs/customPasswordForm.dart';
-export 'Customs/customPhoneForm/customPhoneForm.dart';
-export 'Customs/customTextAppBar.dart';
-export 'Customs/customTextBody.dart';
-export 'Customs/customTextForm.dart';
-export 'Customs/customTextSignupOrSignin.dart';
-export 'Customs/customTextTile.dart';
-export 'Customs/customBottomSheet.dart';
+export 'Customs/custom_button.dart';
+export 'Customs/custom_checkbox.dart';
+export 'Customs/custom_email_form.dart';
+export 'Customs/custom_password_form.dart';
+export 'Customs/customPhoneForm/custom_phone_form.dart';
+export 'Customs/custom_text_app_bar.dart';
+export 'Customs/custom_text_body.dart';
+export 'Customs/custom_text_form.dart';
+export 'Customs/custom_text_signup_or_signin.dart';
+export 'Customs/custom_text_tile.dart';
+export 'Customs/custom_bottom_sheet.dart';

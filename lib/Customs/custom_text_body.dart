@@ -1,13 +1,10 @@
-// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
-class CustomTextAppBar extends StatelessWidget {
+class CustomTextBody extends StatelessWidget {
   final String text;
-  final Color fontColor;
-  const CustomTextAppBar({
+  const CustomTextBody({
     Key? key,
     required this.text,
-    required this.fontColor,
   }) : super(
           key: key,
         );
@@ -21,12 +18,7 @@ class CustomTextAppBar extends StatelessWidget {
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: TextStyle(
-          color: fontColor,
-          fontFamily: 'Nunito',
-          fontSize: 20.0,
-          fontWeight: FontWeight.bold,
-        ),
+        style: Theme.of(context).textTheme.bodyLarge,
       ),
     );
   }
